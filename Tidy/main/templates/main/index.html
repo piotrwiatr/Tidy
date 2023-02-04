@@ -17,15 +17,17 @@
                     <button data-page="camera" class="btn btn-outline-primary" id="camera-btn">Camera</button>
                 </div>
             </div>
+            <div id="test"></div>
             <div class="forms">
                 <div id="laptop">
-                    <form class="nice-form">
-                        <label>Brand</label>
-                        <select id="laptop-brand"> <!--brand-->
+                    <form class="nice-form" enctype="multipart/form-data" method="post" action="{% url 'main:laptopUpload' %}">
+                        {% csrf_token %}
+                        {{ laptopForm }}
+                        {% comment %} <label for"laptop_brand">Brand</label>
+                        <select id="laptop_brand" required> <!--brand-->
                             <option selected>-Select-</option>
                             <option>Acer</option>
                             <option>Apple</option>
-                            <option>Acer</option>
                             <option>ASUS</option>
                             <option>Compaq</option>
                             <option>Dell</option>
@@ -37,37 +39,38 @@
                             <option>Toshiba</option>
                             <option>Other</option>
                         </select>
-                        <label>Screen Size</label>
-                        <select id="laptop-screen-size"> <!--Screen size-->
+                        <label for"laptop_screen_size">Screen Size</label>
+                        <select id="laptop_screen_size" required> <!--Screen size-->
                             <option selected>-Select-</option>
                             <option>14" and under</option>
                             <option>15"</option>
                             <option>16"</option>
                             <option>17" and over</option>
                         </select>
-                        <label>Condition</label>
-                        <select id="laptop-condition"> <!--Condition-->
+                        <label for"laptop_condition">Condition</label>
+                        <select id="laptop_condition" required> <!--Condition-->
                             <option selected>-Select-</option>
                             <option>Used - Like New</option>
                             <option>Used - Good</option>
                             <option>Used - Fair</option>
                         </select>
                         <label>Price (CAD) $</label>
-                        <input type="text" placeholder="Price" id="laptop-price">
-                        <label>Please provide at least one image of the product</label>
-                        <input type="file" name="upload" accept="image/*" id="laptop-image">
-                        <input type="submit" id="laptop-submit" class="btn btn-primary">
+                        <input type="text" placeholder="Price" id="laptop_price" required>
+                        <label>Please provide at least one image of the product</label>{% endcomment %}
+                        <input type="file" name="upload" accept="image/*" id="laptop_image" required>
+                        <input type="submit" id="laptop_submit" class="btn btn-primary">
                     </form>
                 </div>
                 <div id="desktop">
                     <form class="nice-form">
-                        <label>Brand</label>
-                        <select id="desktop-brand"> <!--brand-->
+                        {% csrf_token %}
+                        {{ desktopForm }}
+                        {% comment %} <label>Brand</label>
+                        <select id="desktop_brand"> <!--brand-->
                             <option selected>-Select-</option>
                             <option>Custom</option>
                             <option>Acer</option>
                             <option>Apple</option>
-                            <option>Acer</option>
                             <option>ASUS</option>
                             <option>Compaq</option>
                             <option>Dell</option>
@@ -90,14 +93,16 @@
                         </select>
                         <label>Price (CAD) $</label>
                         <input type="text" placeholder="Price" id="desktop-price">
-                        <label>Please provide at least one image of the product</label>
-                        <input type="file" name="upload" accept="image/*" id="desktop-image">
-                        <input type="submit" id="desktop-submit" class="btn btn-primary">
+                        <label>Please provide at least one image of the product</label> {% endcomment %}
+                        <input type="file" name="upload" accept="image/*" id="desktop_image">
+                        <input type="submit" id="desktop_submit" class="btn btn-primary">
                     </form>
                 </div>
                 <div id="camera">
                     <form class="nice-form">
-                        <label>Brand</label>
+                        {% csrf_token %}
+                        {{ cameraForm }}
+                        {% comment %} <label>Brand</label>
                         <input type="text" placeholder="Brand" id="camera-brand">
                         <label>Condition</label>
                         <select id="camera-condition"> <!--Condition-->
@@ -108,9 +113,9 @@
                         </select>
                         <label>Price (CAD) $</label>
                         <input type="text" placeholder="Price" id="camera-price">
-                        <label>Please provide at least one image of the product</label>
-                        <input type="file" name="upload" accept="image/*" id="camera-image">
-                        <input type="submit" id="camera-submit" class="btn btn-primary">
+                        <label>Please provide at least one image of the product</label> {% endcomment %}
+                        <input type="file" name="upload" accept="image/*" id="camera_image">
+                        <input type="submit" id="camera_submit" class="btn btn-primary">
                     </form>
                 </div>
             </div>
