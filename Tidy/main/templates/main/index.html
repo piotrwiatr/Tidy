@@ -1,0 +1,24 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block imports %}
+<link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+{% endblock %}
+
+{% block body %}
+    <script src ="{% static 'main/js/script.js' %}" defer></script>
+    <div id="main-content">
+        <div id="category-container">
+            <h2 class="selling-text">Sell a</h2>
+            <form id="getCategory">
+                <select id="categories" name="categories">
+                    <option value="laptop" selected>Laptop</option>
+                    <option value="desktop">Desktop</option>
+                    <option value="camera">Camera</option>
+                </select>
+                <input type="submit" value="sell" class="submit-button">
+            </form>
+        </div>
+    </div>
+{% endblock %}
