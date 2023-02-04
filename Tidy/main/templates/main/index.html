@@ -1,24 +1,119 @@
 {% extends "main/layout.html" %}
 {% load static %}
 
-{% block imports %}
-<link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{% static 'main/css/index.css' %}">
-{% endblock %}
+{% block imports%}
+    <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+    <script src ="{% static 'main/js/script.js' %}" defer></script>
+{% endblock%}
 
 {% block body %}
-    <script src ="{% static 'main/js/script.js' %}" defer></script>
     <div id="main-content">
-        <div id="category-container">
-            <h2 class="selling-text">Sell a</h2>
-            <form id="getCategory">
-                <select id="categories" name="categories">
-                    <option value="laptop" selected>Laptop</option>
-                    <option value="desktop">Desktop</option>
-                    <option value="camera">Camera</option>
-                </select>
-                <input type="submit" value="sell" class="submit-button">
-            </form>
+        <div class="body">
+            <div id="category-container">
+                <h2 class="selling-text">Sell a</h2>
+                <div class="options">
+                    <button data-page="laptop" class="btn btn-outline-primary" id="laptop-btn">Laptop</button>
+                    <button data-page="desktop" class="btn btn-outline-primary" id="desktop-btn">Desktop</button>
+                    <button data-page="camera" class="btn btn-outline-primary" id="camera-btn">Camera</button>
+                </div>
+            </div>
+            <div class="forms">
+                <div id="laptop">
+                    <form class="nice-form">
+                        <label>Brand</label>
+                        <select id="laptop-brand"> <!--brand-->
+                            <option selected>-Select-</option>
+                            <option>Acer</option>
+                            <option>Apple</option>
+                            <option>Acer</option>
+                            <option>ASUS</option>
+                            <option>Compaq</option>
+                            <option>Dell</option>
+                            <option>Gateway</option>
+                            <option>HP</option>
+                            <option>Lenovo</option>
+                            <option>Samsung</option>
+                            <option>Sony</option>
+                            <option>Toshiba</option>
+                            <option>Other</option>
+                        </select>
+                        <label>Screen Size</label>
+                        <select id="laptop-screen-size"> <!--Screen size-->
+                            <option selected>-Select-</option>
+                            <option>14" and under</option>
+                            <option>15"</option>
+                            <option>16"</option>
+                            <option>17" and over</option>
+                        </select>
+                        <label>Condition</label>
+                        <select id="laptop-condition"> <!--Condition-->
+                            <option selected>-Select-</option>
+                            <option>Used - Like New</option>
+                            <option>Used - Good</option>
+                            <option>Used - Fair</option>
+                        </select>
+                        <label>Price (CAD) $</label>
+                        <input type="text" placeholder="Price" id="laptop-price">
+                        <label>Please provide at least one image of the product</label>
+                        <input type="file" name="upload" accept="image/*" id="laptop-image">
+                        <input type="submit" id="laptop-submit">
+                    </form>
+                </div>
+                <div id="desktop">
+                    <form class="nice-form">
+                        <label>Brand</label>
+                        <select id="desktop-brand"> <!--brand-->
+                            <option selected>-Select-</option>
+                            <option>Custom</option>
+                            <option>Acer</option>
+                            <option>Apple</option>
+                            <option>Acer</option>
+                            <option>ASUS</option>
+                            <option>Compaq</option>
+                            <option>Dell</option>
+                            <option>Gateway</option>
+                            <option>HP</option>
+                            <option>IBM</option>
+                            <option>Intel</option>
+                            <option>Lenovo</option>
+                            <option>Samsung</option>
+                            <option>Sony</option>
+                            <option>Toshiba</option>
+                            <option>Other</option>
+                        </select>
+                        <label>Condition</label>
+                        <select id="desktop-condition"> <!--Condition-->
+                            <option selected>-Select-</option>
+                            <option>Used - Like New</option>
+                            <option>Used - Good</option>
+                            <option>Used - Fair</option>
+                        </select>
+                        <label>Price (CAD) $</label>
+                        <input type="text" placeholder="Price" id="desktop-price">
+                        <label>Please provide at least one image of the product</label>
+                        <input type="file" name="upload" accept="image/*" id="desktop-image">
+                        <input type="submit" id="desktop-submit">
+                    </form>
+                </div>
+                <div id="camera">
+                    <form class="nice-form">
+                        <label>Brand</label>
+                        <input type="text" placeholder="Brand" id="camera-brand">
+                        <label>Condition</label>
+                        <select id="camera-condition"> <!--Condition-->
+                            <option selected>-Select-</option>
+                            <option>Used - Like New</option>
+                            <option>Used - Good</option>
+                            <option>Used - Fair</option>
+                        </select>
+                        <label>Price (CAD) $</label>
+                        <input type="text" placeholder="Price" id="camera-price">
+                        <label>Please provide at least one image of the product</label>
+                        <input type="file" name="upload" accept="image/*" id="camera-image">
+                        <input type="submit" id="camera-submit">
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
