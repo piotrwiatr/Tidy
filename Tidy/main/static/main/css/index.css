@@ -14,6 +14,18 @@
     justify-content: space-between;
 }
 
+#getCategory {
+    margin: 2em;
+}
+
+#getCategory select {
+    padding: 0.5em;
+}
+
+.submit-button {
+    padding: 0.35em 0.8em;
+}
+
 .selling-text {
     font-family: 'Tangerine', cursive;
     font-weight: bold;
