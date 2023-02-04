@@ -1,1 +1,34 @@
-<img src="{{ fileUrl }}">
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block imports%}
+    <link rel="stylesheet" href="{% static 'main/css/result.css' %}">
+    <script src ="{% static 'main/js/result.js' %}" defer></script>
+{% endblock %}
+
+{% block body %}
+    <div id="main-content">
+        <div class="body">
+            <div class="return-info">
+                <div class="title">
+                    <h1>{{ title }}</h1>
+                    {% comment %} <h1>Acer 16" Laptop - Like New!</h1> {% endcomment %}
+                </div>
+                <div class="description">
+                    <p>{{ desc }}</p>
+                    {% comment %} <p>For sale is an Acer 16" laptop in excellent condition. The laptop has been gently used and is in like-new condition with no noticeable signs of wear and tear. It features a powerful Intel Core i5 processor, 8GB of RAM, and a large 512GB SSD for fast and efficient performance. The 16" display offers stunning visuals, making it perfect for both work and entertainment. Additionally, the laptop comes with Windows 10 pre-installed and includes a range of useful applications and programs. This is a great opportunity to own a high-quality laptop at a great price. Don't miss out on this excellent deal!</p> {% endcomment %}
+                </div>
+                <div class="images">
+                    {% for img in imgs %}
+                        <img class="display-image" src={{ img }}>
+                    {% endfor %}
+                    {% comment %} <img class="display-image" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-4x4VhWFw7J82gyLq986NQsE5/user-iRhTsrAwPD3vKWaD2iNspUlJ/img-rhcDhBVQsIvlXnmIexWo7Dxo.png?st=2023-02-04T21%3A57%3A51Z&se=2023-02-04T23%3A57%3A51Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-02-04T21%3A10%3A05Z&ske=2023-02-05T21%3A10%3A05Z&sks=b&skv=2021-08-06&sig=9jTtEzaIzi8kZboteh603mT8OQ3Vp4tLRINB5I3Ccgk%3D">
+                    <img class="display-image" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-4x4VhWFw7J82gyLq986NQsE5/user-iRhTsrAwPD3vKWaD2iNspUlJ/img-KQM2KE1OhcumWdpVpqYEqgaU.png?st=2023-02-04T21%3A57%3A51Z&se=2023-02-04T23%3A57%3A51Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-02-04T21%3A10%3A05Z&ske=2023-02-05T21%3A10%3A05Z&sks=b&skv=2021-08-06&sig=UPDiRvGLcx3801OHABBJDOJeh6HDghfBrt4t0JZa640%3D">
+                    <img class="display-image" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-4x4VhWFw7J82gyLq986NQsE5/user-iRhTsrAwPD3vKWaD2iNspUlJ/img-naDCwyUiXlqCsbYp4eoM2gt2.png?st=2023-02-04T21%3A57%3A51Z&se=2023-02-04T23%3A57%3A51Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-02-04T21%3A10%3A05Z&ske=2023-02-05T21%3A10%3A05Z&sks=b&skv=2021-08-06&sig=Ti0RKiEkUvZjE4VF4M9%2B0u11aTn9HCuAdtqrd0xhmgg%3D">
+                    <img class="display-image" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-4x4VhWFw7J82gyLq986NQsE5/user-iRhTsrAwPD3vKWaD2iNspUlJ/img-ZVkS3lzAKgXhr9WCsVp4OSuY.png?st=2023-02-04T21%3A57%3A51Z&se=2023-02-04T23%3A57%3A51Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-02-04T21%3A10%3A05Z&ske=2023-02-05T21%3A10%3A05Z&sks=b&skv=2021-08-06&sig=7Fd7veadtD0eUDcUiFqUqWr/HWTZ4xvPuLnx9CvRe9Y%3D">
+                    <img class="display-image" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-4x4VhWFw7J82gyLq986NQsE5/user-iRhTsrAwPD3vKWaD2iNspUlJ/img-WJwAaJzGk4m7uaDHyF8hpRIc.png?st=2023-02-04T21%3A57%3A51Z&se=2023-02-04T23%3A57%3A51Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-02-04T21%3A10%3A05Z&ske=2023-02-05T21%3A10%3A05Z&sks=b&skv=2021-08-06&sig=JxSYW2v3EIsRtSojIoXO21/T32g24vgJn3t6on93N7g%3D"> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
