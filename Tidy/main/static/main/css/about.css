@@ -11,3 +11,24 @@ body {
     flex-direction: row;
     justify-content: center;
 }
+
+.body {
+    background-color: white;
+    width: 60%;
+    margin: 2em 0;
+    border-radius: 1em;
+    box-shadow: 0 1px 3px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-text {
+    margin-top: 1em;
+    width: 90%;
+    margin-left: 3.5em;
+    text-align:justify;
+}
+.main-text h2 {
+    text-align: center;
+}
