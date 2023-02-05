@@ -57,7 +57,7 @@ def cameraUpload(request):
 def result(request, typeOfProduct, fileUrl="", formData=""):
     inst = ChatGPT()
     # unfortunately had to use aboslute path, couldn't find fix in time
-    response = inst.generatePostInfo(typeOfProduct, formData, 'C:/Users/Piotrek/Documents/programming/Tidy/Tidy'+fileUrl)
+    response = inst.generatePostInfo(typeOfProduct, formData, '/Users/piotrwiatr/Documents/projects/Tidy/Tidy'+fileUrl)
     return render(request, "main/result.html", {
         "title": response["title"],
         "desc": response["description"],
