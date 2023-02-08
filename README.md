@@ -4,6 +4,7 @@ This is a project that I made solo during the MacHacks hackathon from Feb 3-5, 2
 There are two primary dependencies that Tidy utilizes: Django and Openai. You can install them by simply running
 
 pip3 install django
+
 pip3 install openai
 
 To keep Tidy as a secure application, both the Django signing key and the OpenAI api key are stored as environment variables. Once you have generated an appropriate Django key and have an API key, store them as djangokey and openaikey respectively. Then run
