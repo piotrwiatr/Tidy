@@ -1,3 +1,15 @@
+# What This Project is About
+This is a project that I made solo during the MacHacks hackathon from Feb 3-5, 2023. My primary goal for this hackathon was to experiment with web development and the way in which people interacts with natural language models through simple user interfaces. I feel that it is important to mention that this is, indeed, my first project in the web development domain. I am not a web designer nor do I know a lot about web technologies. This project essentially served as a deep dive into the world of web so that I can determine if this is a specialization that I might enjoy. Given more time to develop this project, along with more knowledge of various web frameworks and technologies, the result could've been more promising.
+# How to use the project
+There are two primary dependencies that Tidy utilizes: Django and Openai. You can install them by simply running
+pip3 install django
+pip3 install openai
+
+To keep Tidy as a secure application, both the Django signing key and the OpenAI api key are stored as environment variables. Once you have generated an appropriate Django key and have an API key, store them as djangokey and openaikey respectively. Then run
+
+python manage.py runserver
+
+This will open a local instance of the program on your machine and a link will be provided to view it.
 # Inspiration
 Motivating people to act more environmentally friendly is a difficult problem that could potentially result in the reduction of climate change and pollution. One simple way to achieve this is by reusing items rather than constantly producing new ones. Selling or recycling used items can be a chore for many people, which often results in them simply throwing out the item, which is disadvantageous ecologically. Automating this process, or making it easier, could help to motivate people to think more environmentally and take steps towards reducing pollution and unnecessary production.
 # What it does
